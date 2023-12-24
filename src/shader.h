@@ -120,11 +120,15 @@ void shader_set_int(Shader shader, const char* name, int value)
 {
     glUniform1i(glGetUniformLocation(shader, name), value); 
 }
-void shader_set_floar(Shader shader, const char* name, float value)
+void shader_set_float(Shader shader, const char* name, float value)
 {
     glUniform1f(glGetUniformLocation(shader, name), value); 
 }
 void shader_set_mat4(Shader shader, const char* name, glm::mat4* matrix)
 {
-    glUniformMatrix4fv(glGetUniformLocation(shader, name), 1, GL_FALSE, glm::value_ptr(*matrix));
+    glUniformMatrix4fv(glGetUniformLocation(shader, name), 1, GL_FALSE, &(*matrix)[0][0]);
+}
+void shader_set_vec3(Shader shader, const char* name, glm::vec3* vector)
+{
+    glUniform3fv(glGetUniformLocation(shader, name), 1, &(*vector)[0]);
 }
