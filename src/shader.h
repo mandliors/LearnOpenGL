@@ -132,3 +132,7 @@ void shader_set_vec3(Shader shader, const char* name, glm::vec3* vector)
 {
     glUniform3fv(glGetUniformLocation(shader, name), 1, &(*vector)[0]);
 }
+void shader_set_vec3v(Shader shader, const char* name, float x, float y, float z)
+{
+    glUniform3f(glGetUniformLocation(shader, name), x, y, z);
+}

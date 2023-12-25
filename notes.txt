@@ -1,0 +1,5 @@
+naming convention -> camal case, snake case, pascal case
+project structure -> header files, source files
+github repo, cmake opengl setup windows + linux
+own matrix/math library (no glm)
+Gimbal lock, shader optimizations (e.g. lighting, inverse on CPU)
